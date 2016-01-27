@@ -93,7 +93,8 @@ var SP = (function () {
             plugin.attachEvent(pause, plugin.pause, clickEvents);
             plugin.attachEvent(play, plugin.play, clickEvents);
             plugin.queue(item.getAttribute('data-queue'));
-            opts.selectors.art.style.backgroundImage = "url('" + item.getAttribute('data-art') + "')";
+            var albumart = 'background:' + "url('" + item.getAttribute('data-art') + "')";
+            opts.selectors.art.setAttribute('style', albumart);
         },
 
         updatePlaying: function (current) {
@@ -105,14 +106,14 @@ var SP = (function () {
 
         play: function () {
             player.play();
-            pause.style = 'display:block';
-            play.style = 'display:none';
+            pause.setAttribute('style', 'display:block');
+            play.setAttribute('style', 'display:none');
         },
 
         pause: function () {
             player.pause();
-            play.style = 'display:block';
-            pause.style = 'display:none';
+            play.setAttribute('style', 'display:block');
+            pause.setAttribute('style' ,'display:none');
         },
 
         queue: function (i) {
