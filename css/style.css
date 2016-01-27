@@ -1,0 +1,131 @@
+body{
+  font-family: 'Oxygen', sans-serif;
+  background: #828282;
+  color:white;
+}
+
+#controls{
+  margin: 10px 0;
+}
+
+
+#controls span{
+  padding: 5px;
+  background: cornflowerblue;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: white;
+  font-family: tahoma;
+  font-size: 12px;
+}
+
+
+/*new styles*/
+#album-art{
+    width: 100%;
+    display: inline-block;
+    background: url('../images/noart.jpg');
+    background-size: 500px;
+    height:500px;
+    background-position-x: 140px;
+}
+
+#playlist{
+    margin-top: -30px;
+    background: #000;
+    position: absolute;
+    z-index: 1;
+    width: 95%;
+    height:auto;
+    min-height: 300px;
+    margin-bottom: 80px;
+}
+
+#playlist li{
+    border-bottom: 1px dotted #ecebe8;
+    padding:5px;
+    cursor: pointer;
+}
+
+#playlist span{
+    padding:0 3px;
+    font-size:12px;
+    color:grey;
+}
+
+#playlist .title{
+    margin:0;
+    margin-bottom:-1px;
+}
+
+#now-playing{
+   border-top: 1px solid grey;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    z-index: 1000;
+    padding: 0px 20px;
+}
+
+#now-playing i{
+    color:white;
+}
+
+#play-controls{
+    margin-top: 10px;
+}
+
+#play-controls span{
+    cursor: pointer;
+}
+
+#playing-title{
+  font-weight: bold;
+}
+
+#now-playing-info{
+   margin-top: 2px;
+}
+
+#shuffle-play{
+    position: absolute;
+    z-index: 100;
+    margin-top: -47px;
+    margin-left: 70px;
+    background: #84bd00;
+    padding: 7px;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#playlist .active{
+  color: #84bd00;
+}
+
+#next-prev{
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+#next-prev div{
+  cursor: pointer;
+  color: #828282;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+    #album-art{
+        background-size: 350px !important;
+        background-position-y: -35px !important;
+        height: 300px !important;
+        background-position-x: 0px !important;
+    }
+}

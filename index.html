@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <title>SpotifyLike</title>
+  
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <script>
+  var audObj = [
+    {
+      title: 'title1',
+      album: 'album1',
+      artist: 'artist1',
+      art: 'http://orig00.deviantart.net/12fd/f/2015/243/0/c/albumcoverfor_benprunty_fragments_sylviaritter_by_faith303-d97uftr.png',
+      track: 'http://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3'
+    },
+    {
+      title: 'title2',
+      album: 'album2',
+      artist: 'artist2',
+      art: 'http://media.creativebloq.futurecdn.net/sites/creativebloq.com/files/images/2014/02/coldplay2.jpg',
+      track: 'http://incompetech.com/music/royalty-free/mp3-royaltyfree/Despair%20and%20Triumph.mp3'
+    },
+    {
+      title: 'title3',
+      album: 'album3',
+      artist: 'artist3',
+      art: 'http://f0.bcbits.com/z/40/53/4053709792-1.jpg',
+      track: 'http://incompetech.com/music/royalty-free/mp3-royaltyfree/Inner%20Light.mp3'
+    },
+    {
+      title: 'title4',
+      album: 'album4',
+      artist: 'artist4',
+      art: 'http://images.rapgenius.com/a5b8bbf9c18b80a7dbf3dd30a102e68a.600x600x1.jpg',
+      track: 'http://incompetech.com/music/royalty-free/mp3-royaltyfree/Facile.mp3'
+    },
+    {
+      title: 'title5',
+      album: 'album5',
+      artist: 'artist5',
+      art: 'http://blog.wanken.com/wp-content/uploads/2010/10/Pinscape-album-art.jpg',
+      track: 'http://incompetech.com/music/royalty-free/mp3-royaltyfree/Midsummer%20Sky.mp3'
+    },
+  ]
+
+  </script>
+
+
+</head>
+<body>
+    <audio id="player" src="" preload="auto" controls autoplay style="display:none"></audio>
+
+    <div class="container">
+        <div class="row" id="thumb">
+            <div class="col s12">
+               <div id="album-art"></div>
+           </div>
+        </div>
+
+        <div class="row" id="shuffle-play">
+            Shuffle Play
+        </div>
+
+        <div class="row" id="playlist">
+           <div class="col s12">
+               
+           </div>
+        </div>
+    </div>
+
+    <div id="now-playing">
+        <div id="now-playing-info" class="left">
+            <div id="playing-title"></div>
+            <div id="playing-artist"></div>
+        </div>
+        <div id="play-controls" class="right">
+            <span id="play"><i class="fa fa-play fa-2x"></i></span>
+            <span id="pause" style="display:none;"><i class="fa fa-pause fa-2x"></i></span>
+        </div>
+    </div>
+
+    <div id="next-prev">
+      <div id="prev" class="left"><i class="fa fa-step-backward fa-4x"></i></div>
+      <div id="next" class="right"><i class="fa fa-step-forward fa-4x"></i></div>
+    </div>
+
+  <!--include scripts -->
+  <script src="js/app.js"></script>
+
+  <script>
+  SP.config ({
+     playlist: audObj,
+     autoplay: true,
+     selectors: {
+         playlist: 'playlist', //id for playlist, which has a ul item
+         art: 'album-art', //id for album art
+         title: 'playing-title', //id for playing title
+         artist: 'playing-artist', //id for playing artist
+         shuffle: 'shuffle-play'
+     }
+  });
+  </script>
+</body>
+</html>
