@@ -1,6 +1,5 @@
-'use strict';
-
 var SP = (function () {
+    'use strict';
 
     var player = document.getElementById('player');
     var pause = document.getElementById('pause');
@@ -14,7 +13,7 @@ var SP = (function () {
         config: function (options) {
             //if HTML5 audio is not supported DIE!!!
             var res = typeof (player.play) == 'undefined' ? false : true;
-            if (res == false) {
+            if (res === false) {
                 console.log('HTML5 audio not supported');
                 return;
             }
@@ -29,7 +28,7 @@ var SP = (function () {
                     artist: document.getElementById(options.selectors.artist) || 'document.getElementById("playing-artist")',
                     shuffle: document.getElementById(options.selectors.shuffle) || 'document.getElementById("shuffle-play")'
                 }
-            }
+            };
 
             plugin.assembleHTML(opts);
         },
@@ -49,28 +48,31 @@ var SP = (function () {
                 var title = document.createElement('p');
                 title.setAttribute('class', 'title');
                 title.innerHTML = val.title;
-                li.appendChild(title)
+                li.appendChild(title);
                 /*add title*/
 
                 /*add artist*/
                 var artist = document.createElement('span');
                 artist.setAttribute('class', 'artist');
                 artist.innerHTML = val.artist;
-                li.appendChild(artist)
+                li.appendChild(artist);
                 /*add artist*/
 
                 /*add artist*/
                 var album = document.createElement('span');
                 album.setAttribute('class', 'album');
                 album.innerHTML = val.album;
-                li.appendChild(album)
+                li.appendChild(album);
                 /*add artist*/
 
                 ul.appendChild(li);
                 plugin.attachEvent(li, plugin.playTrack, clickEvents);
 
                 //post proc
-                opts.autoplay == true ? plugin.playTrack(ul.getElementsByTagName('li')[0]) : ''; //first load
+                //first load
+                if (opts.autoplay === true) {
+                    plugin.playTrack(ul.getElementsByTagName('li')[0])
+                }
                 plugin.attachEvent(opts.selectors.shuffle, plugin.shuffle, clickEvents);
                 plugin.attachEvent(document.getElementById('prev'), plugin.prevTrack, clickEvents);
                 plugin.attachEvent(document.getElementById('next'), plugin.nextTrack, clickEvents);
@@ -113,18 +115,18 @@ var SP = (function () {
         pause: function () {
             player.pause();
             play.setAttribute('style', 'display:block');
-            pause.setAttribute('style' ,'display:none');
+            pause.setAttribute('style', 'display:none');
         },
 
         queue: function (i) {
             var n = Number(i) + 1;
             var elem = document.getElementsByClassName('track')[n];
-            if (elem == null) {
+            if (elem === null) {
                 elem = document.getElementsByClassName('track')[0];
             }
             player.onended = function () {
                 plugin.nextSong(elem);
-            }
+            };
         },
 
         shuffle: function () {
@@ -141,7 +143,7 @@ var SP = (function () {
             var current = document.getElementsByClassName('active')[0].getAttribute('data-queue');
             var n = Number(current) + 1;
             var elem = document.getElementsByClassName('track')[n];
-            if (elem == null) {
+            if (elem === null) {
                 elem = document.getElementsByClassName('track')[0];
             }
             plugin.playTrack(elem);
@@ -165,7 +167,7 @@ var SP = (function () {
                 li[0].className = 'track';
             }
         }
-    }
+    };
 
     //return the plugin
     return plugin;
