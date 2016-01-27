@@ -9,7 +9,6 @@ var SP = (function() {
   var opts = {};
 
   var clickEvents = ['click','onclick'];
-  var audioEndedEvents = ['ended', 'onended'];
 
   var plugin = {
     config: function(options) {
