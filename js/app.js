@@ -71,7 +71,7 @@ var SP = (function () {
                 //post proc
                 //first load
                 if (opts.autoplay === true) {
-                    plugin.playTrack(ul.getElementsByTagName('li')[0])
+                    plugin.playTrack(ul.getElementsByTagName('li')[0]);
                 }
                 plugin.attachEvent(opts.selectors.shuffle, plugin.shuffle, clickEvents);
                 plugin.attachEvent(document.getElementById('prev'), plugin.prevTrack, clickEvents);
