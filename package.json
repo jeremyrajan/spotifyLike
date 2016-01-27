@@ -1,0 +1,12 @@
+{
+  "name": "SpotifyLike",
+  "description": "A SpotifyLike FrontEnd for HTML5 Player",
+  "author": "Jeremy, Keefe",
+  "version": "0.0.1",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "scripts": {
+    "test": "./node_modules/jshint/bin/jshint js/app.js"
+  }
+}
