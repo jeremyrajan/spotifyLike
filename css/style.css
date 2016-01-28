@@ -106,15 +106,15 @@ body{
     position: relative;
     z-index: 100;
 	display:block;
-	margin:0 30px;
+	margin:0 50px;
 	top:-25px;
 }
 
 #shuffle-play .button {
     background: #84bd00;
-    padding: 7px;
+    padding: 12px;
     width: 100%;
-	max-width:480px;
+	max-width:320px;
     text-align: center;
 	margin:0 auto;
     border-radius: 20px;
@@ -127,12 +127,13 @@ body{
 }
 
 #next-prev {
-  position: absolute;
+  position:absolute;
   display:block;
-  top: 10%;
+  top:20%;
   width: 100%;
   padding:20px;
   max-width:1280px;
+  z-index:999;
 }
 
 #next-prev div {
@@ -140,10 +141,29 @@ body{
   color: #828282;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media screen and (max-width: 480px) {
 	
 #album-art {
+    height:400px;  
 	max-height:400px;
 }
-   
+
+		
 }
+
+@media screen and (max-width: 360px) {
+	
+#album-art {
+    height:300px;  
+	max-height:300px;
+}
+
+#next-prev {
+  top:12%;
+}
+
+		
+}
+	
+
+
