@@ -121,7 +121,7 @@ var SP = (function () {
         queue: function (i) {
             var n = Number(i) + 1;
             var elem = document.getElementsByClassName('track')[n];
-            if (elem === null) {
+            if (elem === null || elem === undefined) {
                 elem = document.getElementsByClassName('track')[0];
             }
             player.onended = function () {
@@ -143,7 +143,7 @@ var SP = (function () {
             var current = document.getElementsByClassName('active')[0].getAttribute('data-queue');
             var n = Number(current) + 1;
             var elem = document.getElementsByClassName('track')[n];
-            if (elem === null) {
+            if (elem === null || elem === undefined) {
                 elem = document.getElementsByClassName('track')[0];
             }
             plugin.playTrack(elem);
