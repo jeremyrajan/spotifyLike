@@ -2,11 +2,10 @@
 <html>
 <head>
   <title>SpotifyLike</title>
-  
+
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"/>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link href="css/font-awesome.min.css" rel="stylesheet">
 
@@ -57,21 +56,15 @@
     <audio id="player" src="" preload="auto" controls autoplay style="display:none"></audio>
 
     <div class="container">
-        <div class="row" id="thumb">
-            <div class="col s12">
-               <div id="album-art"></div>
-           </div>
-        </div>
+        <div id="album-art"></div>
 
         <div class="row" id="shuffle-play">
             <div class="button">Shuffle Play</div>
         </div>
 
         <div class="row" id="playlist">
-           <div class="col s12">
-           </div>
         </div>
-        
+
         <div id="now-playing">
         <div id="now-playing-info" class="left">
             <div id="playing-title"></div>
@@ -82,17 +75,17 @@
             <span id="pause" style="display:none;"><i class="fa fa-pause fa-2x"></i></span>
         </div>
     </div>
-    
+
     	<div id="next-prev">
       		<div id="prev" class="left"><i class="fa fa-step-backward fa-4x"></i></div>
       		<div id="next" class="right"><i class="fa fa-step-forward fa-4x"></i></div>
     	</div>
-        
+
     </div>
 
-    
-		
-    
+
+
+
 
   <!--include scripts -->
   <script src="js/app.js"></script>
@@ -100,7 +93,7 @@
   <script>
   SP.config ({
      playlist: audObj,
-     autoplay: true,
+     autoplay: false,
      selectors: {
          playlist: 'playlist', //id for playlist, which has a ul item
          art: 'album-art', //id for album art
